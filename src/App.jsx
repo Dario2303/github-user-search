@@ -1,5 +1,6 @@
 import styled from "@emotion/styled"
 import { useEffect } from "react"
+import Header from "./components/Header"
 
 const Hola = styled.h1 `
   color: green;
@@ -7,6 +8,7 @@ const Hola = styled.h1 `
 
 function App() {
 
+  //API call
   useEffect(() => {
     const llamar = async ()  => {
       const url = ('https://api.github.com/users/dario2303')
@@ -19,7 +21,7 @@ function App() {
 
   return (
     <div>
-      <Hola>desde app</Hola>
+      <Header/>
     </div>
   )
 }

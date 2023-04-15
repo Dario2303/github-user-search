@@ -1,0 +1,39 @@
+:root {
+    --primary-font: 'Space Mono', monospace;
+}
+
+[data-theme="dark"] {
+
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+}
+
+*, *:before *:after{
+    box-sizing: inherit;
+}
+
+body {
+    font-family: var(--primary-font);
+    line-height: 2.5rem;
+    font-size: 1.5rem;
+}
+
+h1 {
+    font-size: 2.6rem;
+    line-height: 3.8rem;
+}
+h2 {
+    font-size: 2.2rem;
+    line-height: 3.3rem;
+}
+h3 {
+    font-size: 1.6rem;
+    line-height: 2.4rem;
+}
+h4 {
+    font-size: 1.3rem;
+    line-height: 2rem;
+}

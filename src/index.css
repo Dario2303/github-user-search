@@ -1,9 +1,24 @@
 :root {
     --primary-font: 'Space Mono', monospace;
+    
+    --search-button: #0079FF;
+    --background: hsl(227, 100%, 98%);
+    --form-background: #fefefe;
+    --font-info: #4b6a9b;
+    --font-not-available: #697c9a;
+    --font-username: #2b3442;
+}
+
+[data-theme="light"] {
+    --font-username: #2b3442;
+    --background: hsl(227, 100%, 98%);
+    --form-background: #fefefe;
 }
 
 [data-theme="dark"] {
-
+    --font-username: #FFFFFF;
+    --background: hsl(220, 40%, 13%);
+    --form-background: #1e2a47;
 }
 
 html {
@@ -36,4 +51,9 @@ h3 {
 h4 {
     font-size: 1.3rem;
     line-height: 2rem;
+}
+
+.app {
+    background-color: var(--background);
+    transition: background-color 300ms ease-in-out;
 }

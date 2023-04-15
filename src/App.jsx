@@ -1,10 +1,7 @@
-import styled from "@emotion/styled"
 import { useEffect } from "react"
 import Header from "./components/Header"
 
-const Hola = styled.h1 `
-  color: green;
-`
+
 
 function App() {
 
@@ -20,7 +17,7 @@ function App() {
   }, [])
 
   return (
-    <div>
+    <div className="app" data-theme="dark">
       <Header/>
     </div>
   )

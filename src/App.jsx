@@ -1,9 +1,34 @@
-import { useEffect } from "react"
+import { useEffect, useState } from "react"
 import Header from "./components/Header"
+import styled from "@emotion/styled"
+import Input from "./components/Input"
 
+const Form = styled.div`
+  max-width: 730px;
+  width: 90%;
+  margin: 0 auto;
+  background-color: var(--form-background);
+`
 
+const Body = styled.div`
+  padding-top: 10%;
+  background-color: var(--background);
+  transition: background-color 300ms ease-in-out;
+  width: 100%;
+  height: 100vh;
+`
 
-function App() {
+function App () {
+
+  const [theme, setTheme] = useState(false)
+  
+  const SelectedTheme = () => {
+    if (!theme) {
+      setTheme(true)
+      return
+    }
+    setTheme(false)
+  }
 
   //API call
   useEffect(() => {
@@ -17,9 +42,17 @@ function App() {
   }, [])
 
   return (
-    <div className="app" data-theme="dark">
-      <Header/>
-    </div>
+    <Body data-theme={theme ? 'light' : 'dark'}>
+      <Form>
+        <Header
+          theme={theme}
+          SelectedTheme={SelectedTheme}
+        />
+        <Input
+
+        />
+      </Form>
+    </Body>
   )
 }
 

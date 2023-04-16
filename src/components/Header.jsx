@@ -1,18 +1,20 @@
-import React from 'react'
 import styled from '@emotion/styled'
-import imagen from '../img/icon-moon.svg'
+import moon from '../img/icon-moon.svg'
+import sun from '../img/icon-sun.svg'
 
 const Head = styled.div `
-    display: flex;   
+    display: flex;
+    color: var(--font-username)   
 `
-const DarkLight = styled.p `
+const TextTheme = styled.p `
   text-transform: uppercase;
+  padding-right: 1rem;
 `
 
 const ThemeIcon = styled.div `
   &::before{  
     content: '';
-    background-image: url(${imagen});
+    background-image: url(${e => e.img});
     background-repeat: no-repeat;
     background-position: center;
     width: 3rem;
@@ -27,13 +29,15 @@ const ThemeMenu = styled.div `
   align-items: center;
 `
 
-const Header = () => {
+const Header = ({theme, SelectedTheme}) => {
+  
+  
   return (
     <Head>
       <h1>devfinder</h1>
       <ThemeMenu>
-        <DarkLight>dark</DarkLight>
-        <ThemeIcon></ThemeIcon>
+        <TextTheme>{theme ? 'dark' : 'light'}</TextTheme>
+        <ThemeIcon onClick={() => SelectedTheme()} img={theme ? moon : sun}></ThemeIcon>
       </ThemeMenu>
     </Head>
   )

@@ -52,12 +52,3 @@ h4 {
     font-size: 1.3rem;
     line-height: 2rem;
 }
-
-.app {
-    background-color: var(--background);
-    transition: background-color 300ms ease-in-out;
-}
-
-.theme-icon::before {
-    
-}

@@ -2,6 +2,7 @@ import { useEffect, useState } from "react"
 import Header from "./components/Header"
 import styled from "@emotion/styled"
 import Input from "./components/Input"
+import UserInfo from "./components/UserInfo"
 
 const Form = styled.div`
   max-width: 730px;
@@ -19,7 +20,10 @@ const Body = styled.div`
 
 function App () {
 
+  const [user, setUser] = useState({})
+  const [inputUser, setInputUser] = useState('')
   const [theme, setTheme] = useState(false)
+
   
   const SelectedTheme = () => {
     if (!theme) {
@@ -30,15 +34,13 @@ function App () {
   }
 
   //API call
-  useEffect(() => {
-    const llamar = async ()  => {
-      const url = ('https://api.github.com/users/dario2303')
-      const respuesta = await fetch(url)
-      const resultado = await respuesta.json()
-      console.log(resultado)
-    }
-    llamar()
-  }, [])
+  const SearchUser = async ()  => {
+    const url = (`https://api.github.com/users/${inputUser}`)
+    const respuesta = await fetch(url)
+    const resultado = await respuesta.json()
+    setUser(resultado)
+  }
+
 
   return (
     <Body data-theme={theme ? 'light' : 'dark'}>
@@ -48,7 +50,12 @@ function App () {
           SelectedTheme={SelectedTheme}
         />
         <Input
-
+          inputUser={inputUser}
+          setInputUser={setInputUser}
+          SearchUser={SearchUser}
+        />
+        <UserInfo
+          user={user}
         />
       </Form>
     </Body>

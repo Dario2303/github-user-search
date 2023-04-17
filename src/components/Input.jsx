@@ -62,13 +62,16 @@ const SearchButton= styled.button `
     }
 `
 
-const Input = () => {
+const Input = ({inputUser, setInputUser, SearchUser}) => {
   return (
     <InputBox>
       <SearchIcon></SearchIcon>
-      <UserInput type="input" placeholder='Search GitHub username...'/>
+      <UserInput type="input" 
+                placeholder='Search GitHub username...'
+                value={inputUser}
+                onChange={e => setInputUser(e.target.value)}/>
       <NoResult>No results</NoResult>
-      <SearchButton>Search</SearchButton>
+      <SearchButton onClick={() => SearchUser()}>Search</SearchButton>
     </InputBox>
   )
 }

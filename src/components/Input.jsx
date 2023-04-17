@@ -4,22 +4,71 @@ import Search from '../img/icon-search.svg'
 
 const InputBox = styled.div`
     display: flex;
+    height: 6rem;
+    background-color: var(--form-background);
+    border-radius: 1rem;
+    @media (min-width: 376px) { 
+        height: 6.9rem;
+    }
 `
-SearchIcon = styled.div`
-    content: '';
-    width: 2rem;
-    height: 2rem;
-    background-image: url(${Search});
-    display: block;
+const SearchIcon = styled.div`
+    &::before{
+        content: '';
+        width: 5rem;
+        height: 3rem;
+        background-image: url(${Search});
+        background-repeat: no-repeat;
+        background-position: center;
+        padding-top: 4rem;
+        background-size: 2.2rem;
+        display: block;
+        cursor: pointer;
+    }
+
+    &:hover {
+        transform: scale(1.1);
+        transition: transform 100ms ease-in-out;
+    }
+    &:active {
+        transform: scale(1.15);
+    }
+`
+
+const UserInput = styled.input `
+    background: transparent;
+    border: none;
+    width: 100%;
+`
+
+const NoResult = styled.p `
+    margin-left: auto;
+    display: none;
+    color: red;
+
+    @media (min-width: 376px) { 
+        display: block;
+    }
+`
+
+const SearchButton= styled.button `
+    background-color: var(--search-button);
+    color: white;
+    width: 14rem;
+    margin: 1rem;
+    border-radius: 1rem;
+    cursor: pointer;
+    &:hover{
+        opacity: 0.7;
+    }
 `
 
 const Input = () => {
   return (
     <InputBox>
       <SearchIcon></SearchIcon>
-      <input type="input"/>
-      <div>No results</div>
-      <button>Search</button>
+      <UserInput type="input" placeholder='Search GitHub username...'/>
+      <NoResult>No results</NoResult>
+      <SearchButton>Search</SearchButton>
     </InputBox>
   )
 }

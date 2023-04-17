@@ -36,6 +36,10 @@ body {
     font-size: 1.5rem;
     margin: 0;
 }
+input, button {
+    font-family: var(--primary-font);
+    border: 0;
+}
 h1 {
     font-size: 2.6rem;
     line-height: 3.8rem;

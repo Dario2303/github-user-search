@@ -7,7 +7,6 @@ const Form = styled.div`
   max-width: 730px;
   width: 90%;
   margin: 0 auto;
-  background-color: var(--form-background);
 `
 
 const Body = styled.div`

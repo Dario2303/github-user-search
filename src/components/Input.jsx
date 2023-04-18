@@ -37,7 +37,7 @@ const SearchIcon = styled.div`
 const UserInput = styled.input `
     background: transparent;
     border: none;
-    width: 100%;
+    width: 55%;
 `
 
 const NoResult = styled.p `
@@ -45,7 +45,8 @@ const NoResult = styled.p `
     display: none;
     color: red;
 
-    @media (min-width: 376px) { 
+    @media (min-width: 376px) {
+        width : 10rem;
         display: block;
     }
 `

@@ -11,7 +11,7 @@ const Form = styled.div`
 `
 
 const Body = styled.div`
-  padding-top: 10%;
+  padding-top: 5rem;
   background-color: var(--background);
   transition: background-color 300ms ease-in-out;
   width: 100%;
@@ -19,7 +19,7 @@ const Body = styled.div`
 `
 
 function App () {
-
+  
   const [user, setUser] = useState({})
   const [inputUser, setInputUser] = useState('')
   const [theme, setTheme] = useState(false)

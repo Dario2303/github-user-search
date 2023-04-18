@@ -7,7 +7,6 @@ import iconWeb from '../img/icon-website.svg';
 import iconCompany from '../img/icon-company.svg';
 
 const Box = styled.div`
-    box-sizing: border-box;
     display: grid;
     padding: 3rem;
     grid-template-columns: 11.7rem 1fr;
@@ -47,6 +46,8 @@ const Bio = styled.p `
 
 const Follow = styled.div`
     display: flex;
+    align-items: center;
+    padding: 0 5rem;
     width: 100%;
     height: 8.5rem;
     border-radius: 1rem;
@@ -99,17 +100,17 @@ const UserInfo = ({user}) => {
 
             <Links link={user.twitter_username ? user.twitter_username : 'Not Available'}
                     icon={iconTwitter}
-                    route={user.twitter_username && user.twitter_username}
+                    route={user.twitter_username ? user.twitter_username : null}
                     />
 
             <Links link={user.blog ? user.blog : 'Not Available'}
                     icon={iconWeb}
-                    route={user.blog && user.blog}
+                    route={user.blog ? user.blog : null}
             />
 
             <Links link={user.company ? '@github' : 'Not Available'}
                     icon={iconCompany}
-                    route={user.company && user.company}/>
+                    route={user.company ? user.html_url : null}/>
         </Contact>
     </Box>
   )

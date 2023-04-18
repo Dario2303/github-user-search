@@ -1,6 +1,6 @@
 # Frontend Mentor - GitHub user search app
 
-<a href="https://todo-app-pi-sable.vercel.app/">
+<a href="https://github-user-search-lyart.vercel.app/">
 <img align="right" width="500" src="./preview.jpg"/>
 </a>
 
@@ -10,8 +10,8 @@ I apply the following tools:
 
 - [Vite](https://es.vitejs.dev/) - compiler
 - [React](https://reactjs.org/) - JS library
-- [Tailwind](https://tailwindcss.com/) - CSS framework
-- Local Storage
+- API from Github
+- styled component
 - flex box and grid
 - Semantic HTML5 markup
 - CSS custom properties

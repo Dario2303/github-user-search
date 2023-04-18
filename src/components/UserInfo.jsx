@@ -5,6 +5,7 @@ import iconLocation from '../img/icon-location.svg';
 import iconTwitter from '../img/icon-twitter.svg';
 import iconWeb from '../img/icon-website.svg';
 import iconCompany from '../img/icon-company.svg';
+import {formatearFecha} from '../helpers/index';
 
 const Box = styled.div`
     display: grid;
@@ -74,6 +75,7 @@ const Contact = styled.div`
     grid-column: 1 / 3;
     @media (min-width: 768px) { 
         grid-template-columns: repeat(2, 1fr);
+        grid-column: 2 / 3;
     }
 `
 
@@ -87,7 +89,8 @@ const UserInfo = ({user}) => {
         </Image>
         <PrincipalDates>
             <h2>{user.name}</h2>
-            <p>{user.created_at}</p>
+            <p>Joined {formatearFecha(user.created_at)}</p>
+            <a href={user.html_url}></a>
         </PrincipalDates>
         <Bio>{user.bio}</Bio>
         <Follow>

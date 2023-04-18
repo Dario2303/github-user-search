@@ -65,11 +65,11 @@ const SearchButton= styled.button `
     }
 `
 
-const Input = ({inputUser, setInputUser, SearchUser, error}) => {
+const Input = ({inputUser, setInputUser, SearchUser, error, OpenModal}) => {
 
   return (
     <InputBox>
-        <SearchIcon></SearchIcon>
+        <SearchIcon onClick={() => OpenModal()}></SearchIcon>
         <UserInput type="input" 
                     placeholder='Search GitHub username...'
                     value={inputUser}

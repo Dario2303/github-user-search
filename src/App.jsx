@@ -41,6 +41,9 @@ function App () {
 
   const OpenModal = () => {
     setOpenModal(true)
+  }
+
+  useEffect(() => {
     const UserList = async () => {
       const url = ('https://api.github.com/users')
       const respuesta = await fetch(url)
@@ -53,7 +56,7 @@ function App () {
         setUserList(list)
     }
     UserList()
-  }
+  },[])
 
   //API call
   const SearchUser = async ()  => {
@@ -99,7 +102,10 @@ function App () {
         />}
       </Form>)  
       }
-      {openModal && <Modal/>}
+      {openModal && <Modal
+                    setOpenModal={setOpenModal}
+                    userList={userList}
+                    />}
     </Body>
   )
 }

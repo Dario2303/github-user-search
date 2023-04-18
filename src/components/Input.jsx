@@ -42,7 +42,9 @@ const UserInput = styled.input `
 
 const NoResult = styled.div `
     display: none;
-    color: red;
+    p {
+        color: red;
+    }
 
     @media (min-width: 768px) {
         width : 15rem;

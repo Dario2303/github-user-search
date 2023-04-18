@@ -37,13 +37,24 @@ const Image = styled.div`
 `
 
 const PrincipalDates = styled.div`
+    p {
+        color: var(--date);
+    }
+    
     @media (min-width: 768px) { 
-        h2 {
-        float: left;
-        }
+
         p {
             text-align: right;
         }
+    }
+`
+
+const Name = styled.div`
+    h2 {
+        color: var(--font-username);
+    }
+    @media (min-width: 768px) { 
+        float: left;
     }
 `
 
@@ -92,7 +103,9 @@ const UserInfo = ({user}) => {
             <img src={user.avatar_url}/>
         </Image>
         <PrincipalDates>
-            <h2>{user.name}</h2>
+            <Name>
+                <h2>{user.name}</h2>
+            </Name>
             <p>Joined {formatearFecha(user.created_at)}</p>
             <a href={user.html_url}></a>
         </PrincipalDates>

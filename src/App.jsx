@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react"
+import { useState } from "react"
 import Header from "./components/Header"
 import styled from "@emotion/styled"
 import Input from "./components/Input"
@@ -20,10 +20,11 @@ const Body = styled.div`
 
 function App () {
   
-  const [user, setUser] = useState({})
-  const [inputUser, setInputUser] = useState('')
-  const [error, setError] = useState(false)
-  const [theme, setTheme] = useState(false)
+  const [user, setUser] = useState({});
+  const [inputUser, setInputUser] = useState('');
+  const [error, setError] = useState(false);
+  const [theme, setTheme] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   
   const SelectedTheme = () => {
@@ -36,23 +37,34 @@ function App () {
 
   //API call
   const SearchUser = async ()  => {
-    const url = (`https://api.github.com/users/${inputUser}`)
-    const respuesta = await fetch(url)
-    const resultado = await respuesta.json()
+    setLoading(true)
+    setUser({})
+
+    const url = (`https://api.github.com/users/${inputUser}`);
+    const respuesta = await fetch(url);
+    const resultado = await respuesta.json();
     if (resultado.name) {
       setUser(resultado)
+      setLoading(false)
       setError(false)
       return
     }else{
       setError(true)
-
+      setLoading(false)
     }
+
   }
 
 
   return (
     <Body data-theme={theme ? 'light' : 'dark'}>
-      <Form>
+      {loading ? 
+      (<div class="spinner">
+        <div class="double-bounce1"></div>
+        <div class="double-bounce2"></div>
+      </div>)
+      :
+      (<Form>
         <Header
           theme={theme}
           SelectedTheme={SelectedTheme}
@@ -66,7 +78,8 @@ function App () {
         <UserInfo
           user={user}
         />
-      </Form>
+      </Form>)  
+    }
     </Body>
   )
 }

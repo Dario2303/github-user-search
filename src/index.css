@@ -5,11 +5,12 @@
     --background: hsl(227, 100%, 98%);
     --form-background: #fefefe;
     --font-info: #4b6a9b;
-    --font-not-available: #697c9a;
+    --date: #697c9a;
     --font-username: #2b3442;
 }
 
 [data-theme="light"] {
+    --date: #697c9a;
     --font-info: #4b6a9b;
     --font-username: #2b3442;
     --background: hsl(227, 100%, 98%);
@@ -17,6 +18,7 @@
 }
 
 [data-theme="dark"] {
+    --date: #FFFFFF;
     --font-info: #FFFFFF;
     --font-username: #FFFFFF;
     --background: hsl(220, 40%, 13%);
@@ -50,7 +52,7 @@ p, h1, h2 {
     margin: 0;
 }
 
-a {
+a, p{
     text-decoration: none;
     color: var(--font-info)
 }

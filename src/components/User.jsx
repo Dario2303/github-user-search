@@ -1,23 +1,36 @@
 import styled from '@emotion/styled'
 import React from 'react'
-import cruz from '../img/close-button.svg'
 
 const UserModal = styled.div`
-
+    margin-bottom: 2rem;
 `
+
+const UserName = styled.div`
+    width: 100%;
+    height: 6rem;
+    padding: 2rem 8rem;
+
+` 
+
 const Img = styled.div`
-    width: auto;
+    width: 6rem;
+    height: 6rem;
+    float: left;
     border-radius: 100%;
     overflow: hidden;
+    background-image: url(${props => props.img});
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
 `
 
-const User = ({avatar, name}) => {
+const User = ({avatar, name, UserSelected}) => {
   return (
-    <UserModal>
-      <Img>
-         <img src={avatar} alt="user"/>   
-      </Img>
-      <p>{name}</p>
+    <UserModal onClick={() => UserSelected(name)}>
+      <Img img={avatar}></Img>
+      <UserName>
+         <p>{name}</p>
+      </UserName>
     </UserModal>
   )
 }

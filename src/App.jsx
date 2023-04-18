@@ -41,8 +41,10 @@ function App () {
 
   const OpenModal = () => {
     setOpenModal(true)
+
   }
 
+  //API list call
   useEffect(() => {
     const UserList = async () => {
       const url = ('https://api.github.com/users')
@@ -58,10 +60,16 @@ function App () {
     UserList()
   },[])
 
+  //selected user in modal
+  const UserSelected = (UserSelected) => {
+    setInputUser(UserSelected)
+    setOpenModal(false)
+
+  }
+
   //API call
   const SearchUser = async ()  => {
     setLoading(true)
-    setUser({})
       const url = (`https://api.github.com/users/${inputUser}`);
       const respuesta = await fetch(url);
       const resultado = await respuesta.json();
@@ -76,6 +84,7 @@ function App () {
         setLoading(false)
       }
   }
+
 
   return (
     <Body data-theme={theme ? 'light' : 'dark'}>
@@ -105,6 +114,7 @@ function App () {
       {openModal && <Modal
                     setOpenModal={setOpenModal}
                     userList={userList}
+                    UserSelected={UserSelected}
                     />}
     </Body>
   )

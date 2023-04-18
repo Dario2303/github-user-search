@@ -31,7 +31,7 @@ const UserList = styled.div`
     overflow: auto;
 `
 
-const Modal = ({setOpenModal, userList}) => {
+const Modal = ({setOpenModal, userList, UserSelected}) => {
   return (
     <ModalList>
         <List>
@@ -41,6 +41,7 @@ const Modal = ({setOpenModal, userList}) => {
             <User
                 avatar={e.avatar}
                 name={e.name}
+                UserSelected={UserSelected}
             />)}
             </UserList>
         </List>

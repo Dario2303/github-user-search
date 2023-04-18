@@ -21,9 +21,11 @@ const ModalList = styled.div`
 
 const List = styled.div`
     display: flex;
+    margin: 0 auto;
     flex-direction: column;
     width: 80%;
     max-width: 900px;
+    
 `
 
 const UserList = styled.div`

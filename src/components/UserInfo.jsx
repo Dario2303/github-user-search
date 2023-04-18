@@ -56,6 +56,9 @@ const Name = styled.div`
     @media (min-width: 768px) { 
         float: left;
     }
+    a {
+        color: var(--search-button);
+    }
 `
 
 const Bio = styled.p `
@@ -105,6 +108,7 @@ const UserInfo = ({user}) => {
         <PrincipalDates>
             <Name>
                 <h2>{user.name}</h2>
+                <a href={user.html_url}>@{user.login}</a>
             </Name>
             <p>Joined {formatearFecha(user.created_at)}</p>
             <a href={user.html_url}></a>

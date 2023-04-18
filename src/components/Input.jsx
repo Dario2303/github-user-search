@@ -35,6 +35,7 @@ const SearchIcon = styled.div`
 `
 
 const UserInput = styled.input `
+    color: var(--font-username);
     background: transparent;
     border: none;
     width: 100%;

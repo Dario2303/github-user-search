@@ -3,13 +3,19 @@ import React from 'react'
 
 const UserModal = styled.div`
     margin-bottom: 2rem;
+    cursor: pointer;
+    &:hover {
+      background-color: hsl(100 100% 100% / 0.3);
+    }
 `
 
 const UserName = styled.div`
     width: 100%;
     height: 6rem;
     padding: 2rem 8rem;
-
+    p {
+      color: white;
+    }
 ` 
 
 const Img = styled.div`

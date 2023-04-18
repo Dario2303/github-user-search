@@ -52,7 +52,7 @@ p, h1, h2 {
     margin: 0;
 }
 
-a, p{
+a, p, h2 {
     text-decoration: none;
     color: var(--font-info)
 }
@@ -78,3 +78,20 @@ h4 {
     opacity: 0.4;
     cursor: inherit;
 }
+
+/*scrollbar*/
+    ::-webkit-scrollbar {
+        width: 10px;
+    }
+
+  ::-webkit-scrollbar-track {
+    background: hsl(100 100% 100% / 0.1); 
+  }
+   
+  ::-webkit-scrollbar-thumb {
+    background: hsla(0, 0%, 60%, 0.5); 
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: hsla(0, 0%, 33%, 0.5); 
+  }

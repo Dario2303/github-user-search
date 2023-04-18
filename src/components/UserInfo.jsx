@@ -16,17 +16,19 @@ const Box = styled.div`
     background-color: var(--form-background);
     margin-top: 2rem;
     border-radius: 1rem;
+    @media (min-width: 768px) { 
+        grid-template-rows: auto auto 8.5rem auto;
+    }
 `
 
 const Image = styled.div`
     border-radius: 100%;
     width: 10rem;
     height: 10rem;
-    
     overflow: hidden;
     display: block;
-    @media (min-width: 376px) { 
-        grid-row: 1 / 5;
+    @media (min-width: 768px) { 
+        grid-row: 1 / 4;
     }
     & img {
         width: 10rem;
@@ -34,12 +36,19 @@ const Image = styled.div`
 `
 
 const PrincipalDates = styled.div`
-    
+    @media (min-width: 768px) { 
+        h2 {
+        float: left;
+        }
+        p {
+            text-align: right;
+        }
+    }
 `
 
 const Bio = styled.p `
     grid-column: 1 / 3;
-    @media (min-width: 376px) { 
+    @media (min-width: 768px) { 
         grid-column: 2 / 3;
     }
 `
@@ -54,14 +63,16 @@ const Follow = styled.div`
     background-color: var(--background);
     justify-content: space-between;
     grid-column: 1 / 3;
-    @media (min-width: 376px) { 
+    @media (min-width: 768px) { 
         grid-column: 2 / 3;
     }
 `
 
 const Contact = styled.div`
     display: grid;
-    @media (min-width: 376px) { 
+    width: 100%;
+    grid-column: 1 / 3;
+    @media (min-width: 768px) { 
         grid-template-columns: repeat(2, 1fr);
     }
 `

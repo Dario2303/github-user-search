@@ -7,7 +7,7 @@ const InputBox = styled.div`
     height: 6rem;
     background-color: var(--form-background);
     border-radius: 1rem;
-    @media (min-width: 376px) { 
+    @media (min-width: 768px) { 
         height: 6.9rem;
     }
 `
@@ -37,7 +37,7 @@ const SearchIcon = styled.div`
 const UserInput = styled.input `
     background: transparent;
     border: none;
-    width: 55%;
+    width: 100%;
 `
 
 const NoResult = styled.p `
@@ -45,7 +45,7 @@ const NoResult = styled.p `
     display: none;
     color: red;
 
-    @media (min-width: 376px) {
+    @media (min-width: 768px) {
         width : 10rem;
         display: block;
     }

@@ -10,12 +10,14 @@
 }
 
 [data-theme="light"] {
+    --font-info: #4b6a9b;
     --font-username: #2b3442;
     --background: hsl(227, 100%, 98%);
     --form-background: #fefefe;
 }
 
 [data-theme="dark"] {
+    --font-info: #FFFFFF;
     --font-username: #FFFFFF;
     --background: hsl(220, 40%, 13%);
     --form-background: #1e2a47;

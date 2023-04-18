@@ -40,14 +40,14 @@ const UserInput = styled.input `
     width: 100%;
 `
 
-const NoResult = styled.p `
-    margin-left: auto;
+const NoResult = styled.div `
     display: none;
     color: red;
 
     @media (min-width: 768px) {
-        width : 10rem;
-        display: block;
+        width : 15rem;
+        display: flex;
+        align-items: center;
     }
 `
 
@@ -63,16 +63,18 @@ const SearchButton= styled.button `
     }
 `
 
-const Input = ({inputUser, setInputUser, SearchUser}) => {
+const Input = ({inputUser, setInputUser, SearchUser, error}) => {
+
   return (
     <InputBox>
-      <SearchIcon></SearchIcon>
-      <UserInput type="input" 
-                placeholder='Search GitHub username...'
-                value={inputUser}
-                onChange={e => setInputUser(e.target.value)}/>
-      <NoResult>No results</NoResult>
-      <SearchButton onClick={() => SearchUser()}>Search</SearchButton>
+        <SearchIcon></SearchIcon>
+        <UserInput type="input" 
+                    placeholder='Search GitHub username...'
+                    value={inputUser}
+                    onChange={e => setInputUser(e.target.value)}/>
+        {error && <NoResult><p>No results</p></NoResult>}
+
+        <SearchButton onClick={() => SearchUser()}>Search</SearchButton>
     </InputBox>
   )
 }

@@ -71,10 +71,14 @@ const Follow = styled.div`
 
 const Contact = styled.div`
     display: grid;
+    align-content: space-evenly;
     width: 100%;
     grid-column: 1 / 3;
-    @media (min-width: 768px) { 
+    @media (min-width: 376px) { 
         grid-template-columns: repeat(2, 1fr);
+        grid-column: 1 / 3;
+    }
+    @media (min-width: 768px) { 
         grid-column: 2 / 3;
     }
 `

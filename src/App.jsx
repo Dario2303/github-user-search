@@ -22,6 +22,7 @@ function App () {
   
   const [user, setUser] = useState({})
   const [inputUser, setInputUser] = useState('')
+  const [error, setError] = useState(false)
   const [theme, setTheme] = useState(false)
 
   
@@ -38,7 +39,14 @@ function App () {
     const url = (`https://api.github.com/users/${inputUser}`)
     const respuesta = await fetch(url)
     const resultado = await respuesta.json()
-    setUser(resultado)
+    if (resultado.name) {
+      setUser(resultado)
+      setError(false)
+      return
+    }else{
+      setError(true)
+
+    }
   }
 
 
@@ -50,6 +58,7 @@ function App () {
           SelectedTheme={SelectedTheme}
         />
         <Input
+          error={error}
           inputUser={inputUser}
           setInputUser={setInputUser}
           SearchUser={SearchUser}
